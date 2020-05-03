@@ -29,6 +29,20 @@ const FlexAlign = () => {
           </div>
         </div>
         <div className='items-container'>
+          <p>baseline</p>
+          <div className='items' style={{ alignItems: 'baseline' }}>
+            <div className='item' style={{ fontSize: '0.6rem' }}>
+              1
+            </div>
+            <div className='item' style={{ fontSize: '0.9rem' }}>
+              2
+            </div>
+            <div className='item' style={{ fontSize: '2rem' }}>
+              3
+            </div>
+          </div>
+        </div>
+        <div className='items-container'>
           <p>stretch (default)</p>
           <div className='items' style={{ alignItems: 'stretch' }}>
             <div className='item'></div>
