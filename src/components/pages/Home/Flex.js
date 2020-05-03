@@ -2,6 +2,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import FlexJustify from './FlexJustify';
+import FlexAlign from './FlexAlign';
+
 const Flex = ({ justifyHandler, justify }) => {
   return (
     <FlexStyle>
@@ -16,11 +18,7 @@ const Flex = ({ justifyHandler, justify }) => {
           align-items
         </a>
       </div>
-      <div className='flex-container' style={{ display: justify ? 'flex' : 'none' }}>
-        <FlexJustify />
-      </div>
-
-      <div className='flex-container' style={{ display: !justify ? 'flex' : 'none' }}></div>
+      <div className='flex-container'>{justify ? <FlexJustify /> : <FlexAlign />}</div>
     </FlexStyle>
   );
 };
@@ -64,6 +62,7 @@ const FlexStyle = styled.div`
     pointer-events: auto;
     cursor: pointer;
     background: ${(props) => props.theme.light.grey.darker} !important;
+    color: ${(props) => props.theme.light.base.bg} !important;
   }
 
   .activeLink {
@@ -72,35 +71,16 @@ const FlexStyle = styled.div`
     color: ${(props) => props.theme.light.base.color} !important;
     background: ${(props) => props.theme.light.base.bg} !important;
   }
-
-  @media (max-width: 710px) {
-    .flex-container .items-justify .items-container p {
-      font-size: 1.4rem;
-    }
-  }
-  @media (max-width: 500px) {
-    .flex-container .items-justify .items-container {
-      flex-direction: column;
-    }
-    .flex-container .items-justify .items-container p {
-      font-size: 1.2rem;
-    }
-    .flex-container .items-justify .items-container p {
-      margin-bottom: 5px;
-    }
-    .flex-container .items-justify .items-container .items {
-      width: 100%;
-    }
-    .flex-container .items-justify .items-container .items .item {
-      height: 2rem;
-      width: 2rem;
-    }
-  }
   @media (max-width: 320px) {
-    .flex-container .items-justify .items-container .items .item {
-      height: 1.3rem;
-      width: 1.3rem;
-      margin: 0.5rem;
+    .toggle {
+      a:first-of-type {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+      }
+      a {
+        padding: 0.6rem;
+        font-size: 0.8rem;
+      }
     }
   }
 `;

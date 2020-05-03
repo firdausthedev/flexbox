@@ -6,7 +6,7 @@ const FlexJustify = () => {
     <FlexJustifyContainer>
       <div className='items-justify'>
         <div className='items-container'>
-          <p>flex-start</p>
+          <p>flex-start (default)</p>
           <div className='items' style={{ justifyContent: 'flex-start' }}>
             <div className='item'></div>
             <div className='item'></div>
@@ -60,7 +60,7 @@ const FlexJustify = () => {
 
 const FlexJustifyContainer = styled.div`
   width: 100%;
-  border: 1px solid ${(props) => props.theme.light.base.bg};
+  border: 2px solid ${(props) => props.theme.light.base.bg};
   min-height: 500px;
   border-radius: 5px;
   margin: 1rem 0;
@@ -79,6 +79,7 @@ const FlexJustifyContainer = styled.div`
       p {
         flex-basis: 20%;
         text-align: center;
+        margin-right: 10px;
         font-size: 2rem;
         color: ${(props) => props.theme.light.base.bg};
       }
@@ -104,6 +105,36 @@ const FlexJustifyContainer = styled.div`
     }
     .items-container:last-of-type {
       margin-bottom: 2rem;
+    }
+  }
+  @media (max-width: 710px) {
+    .items-justify .items-container p {
+      font-size: 1.4rem;
+    }
+  }
+  @media (max-width: 500px) {
+    .items-justify .items-container {
+      flex-direction: column;
+    }
+    .items-justify .items-container p {
+      font-size: 1.2rem;
+    }
+    .items-justify .items-container p {
+      margin-bottom: 5px;
+    }
+    .items-justify .items-container .items {
+      width: 100%;
+    }
+    .items-justify .items-container .items .item {
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+  @media (max-width: 320px) {
+    .items-justify .items-container .items .item {
+      height: 1.3rem;
+      width: 1.3rem;
+      margin: 0.5rem;
     }
   }
 `;
