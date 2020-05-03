@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+}
+
+//color references https://coolors.co/000000-14213d-fca311-e5e5e5-ffffff
+$color1: #000000ff;
+$color2: #14213dff;
+$color3: #fca311ff;
+$color4: #e5e5e5ff;
+$color5: #ffffffff;
