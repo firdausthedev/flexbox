@@ -92,8 +92,8 @@ const FlexJustifyContainer = styled.div`
         display: flex;
         align-items: center;
         .item {
-          height: 4rem;
-          width: 4rem;
+          height: 3.5em;
+          width: 3.5rem;
           background: ${(props) => props.theme.light.accent.base};
           border-radius: 5px;
           margin: 1rem;
