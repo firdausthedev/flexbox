@@ -15,11 +15,7 @@ const Navbar = (props) => {
         </div>
         <ul>
           <li>
-            <a
-              href='https://github.com/firdausthedev/covid19-malaysia-tracker'
-              rel='noopener noreferrer'
-              target='_blank'
-            >
+            <a href='https://github.com/firdausthedev/flexbox' rel='noopener noreferrer' target='_blank'>
               <FontAwesomeIcon icon={faGithubAlt} /> Check out codes
             </a>
           </li>
