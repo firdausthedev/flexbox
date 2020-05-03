@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/flexbox/static/css/main.98fd3374.chunk.css",
-    "main.js": "/flexbox/static/js/main.98f80427.chunk.js",
-    "main.js.map": "/flexbox/static/js/main.98f80427.chunk.js.map",
+    "main.js": "/flexbox/static/js/main.18c8c724.chunk.js",
+    "main.js.map": "/flexbox/static/js/main.18c8c724.chunk.js.map",
     "runtime-main.js": "/flexbox/static/js/runtime-main.1e484d7d.js",
     "runtime-main.js.map": "/flexbox/static/js/runtime-main.1e484d7d.js.map",
     "static/js/2.7fe8c080.chunk.js": "/flexbox/static/js/2.7fe8c080.chunk.js",
     "static/js/2.7fe8c080.chunk.js.map": "/flexbox/static/js/2.7fe8c080.chunk.js.map",
     "index.html": "/flexbox/index.html",
-    "precache-manifest.7ad3365f80b38e1d2e8defeafe6e94b4.js": "/flexbox/precache-manifest.7ad3365f80b38e1d2e8defeafe6e94b4.js",
+    "precache-manifest.96f267dae5b700c9008fb27355027468.js": "/flexbox/precache-manifest.96f267dae5b700c9008fb27355027468.js",
     "service-worker.js": "/flexbox/service-worker.js",
     "static/css/main.98fd3374.chunk.css.map": "/flexbox/static/css/main.98fd3374.chunk.css.map",
     "static/js/2.7fe8c080.chunk.js.LICENSE.txt": "/flexbox/static/js/2.7fe8c080.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.1e484d7d.js",
     "static/js/2.7fe8c080.chunk.js",
     "static/css/main.98fd3374.chunk.css",
-    "static/js/main.98f80427.chunk.js"
+    "static/js/main.18c8c724.chunk.js"
   ]
 }
