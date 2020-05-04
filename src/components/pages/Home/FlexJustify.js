@@ -1,9 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { withTheme } from 'styled-components';
 
-const FlexJustify = ({ value }) => {
+const FlexJustify = (props) => {
+  let border = {};
+  if (props.drag) {
+    border = { width: `${props.value}%`, border: `2px solid ${props.theme.light.accent.base}` };
+  } else {
+    border = { width: `${props.value}%` };
+  }
   return (
-    <FlexJustifyContainer style={{ width: `${value}%` }}>
+    <FlexJustifyContainer style={border}>
       <div className='items-justify'>
         <div className='items-container'>
           <p>flex-start (default)</p>
@@ -59,8 +65,8 @@ const FlexJustify = ({ value }) => {
 };
 
 const FlexJustifyContainer = styled.div`
-  border: 2px solid ${(props) => props.theme.light.base.bg};
   min-height: 500px;
+  border: 2px solid ${(props) => props.theme.light.base.bg};
   border-radius: 5px;
   margin: 1rem auto;
 
@@ -131,4 +137,4 @@ const FlexJustifyContainer = styled.div`
   }
 `;
 
-export default FlexJustify;
+export default withTheme(FlexJustify);

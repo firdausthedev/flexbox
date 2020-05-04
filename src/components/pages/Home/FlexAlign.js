@@ -60,6 +60,7 @@ const FlexAlignContainer = styled.div`
   min-height: 500px;
   border-radius: 5px;
   margin: 1rem 0;
+
   .items-align {
     display: flex;
     flex: 1;

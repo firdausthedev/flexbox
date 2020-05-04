@@ -6,8 +6,16 @@ import FlexAlign from './FlexAlign';
 
 const Flex = ({ justifyHandler, justify }) => {
   const [value, setValue] = useState(100);
+  const [isDragging, setIsDragging] = useState(false);
 
-  const onChange = (e) => setValue(e.target.value);
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  const event = (e) => {
+    setIsDragging(!isDragging);
+  };
+
   return (
     <FlexStyle>
       <div className='title'>
@@ -23,11 +31,19 @@ const Flex = ({ justifyHandler, justify }) => {
       </div>
       {justify && (
         <div className='slider'>
-          <input type='range' min='45' max='100' value={value} onChange={onChange} />
+          <input
+            type='range'
+            min='45'
+            max='100'
+            value={value}
+            onChange={onChange}
+            onMouseDown={event}
+            onMouseUp={event}
+          />
         </div>
       )}
 
-      <div className='flex-container'>{justify ? <FlexJustify value={value} /> : <FlexAlign />}</div>
+      <div className='flex-container'>{justify ? <FlexJustify value={value} drag={isDragging} /> : <FlexAlign />}</div>
     </FlexStyle>
   );
 };
