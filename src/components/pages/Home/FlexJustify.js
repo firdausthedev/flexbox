@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const FlexJustify = () => {
+const FlexJustify = ({ value }) => {
   return (
-    <FlexJustifyContainer>
+    <FlexJustifyContainer style={{ width: `${value}%` }}>
       <div className='items-justify'>
         <div className='items-container'>
           <p>flex-start (default)</p>
@@ -59,11 +59,10 @@ const FlexJustify = () => {
 };
 
 const FlexJustifyContainer = styled.div`
-  width: 100%;
   border: 2px solid ${(props) => props.theme.light.base.bg};
   min-height: 500px;
   border-radius: 5px;
-  margin: 1rem 0;
+  margin: 1rem auto;
 
   .items-justify {
     display: flex;
@@ -92,7 +91,7 @@ const FlexJustifyContainer = styled.div`
         display: flex;
         align-items: center;
         .item {
-          height: 3.5em;
+          height: 70%;
           width: 3.5rem;
           background: ${(props) => props.theme.light.accent.base};
           border-radius: 5px;
@@ -126,15 +125,8 @@ const FlexJustifyContainer = styled.div`
       width: 100%;
     }
     .items-justify .items-container .items .item {
-      height: 2rem;
-      width: 2rem;
-    }
-  }
-  @media (max-width: 320px) {
-    .items-justify .items-container .items .item {
-      height: 1.3rem;
-      width: 1.3rem;
-      margin: 0.5rem;
+      height: 40%;
+      width: 1.6rem;
     }
   }
 `;

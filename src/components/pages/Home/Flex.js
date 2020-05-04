@@ -1,10 +1,13 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import FlexJustify from './FlexJustify';
 import FlexAlign from './FlexAlign';
 
 const Flex = ({ justifyHandler, justify }) => {
+  const [value, setValue] = useState(100);
+
+  const onChange = (e) => setValue(e.target.value);
   return (
     <FlexStyle>
       <div className='title'>
@@ -18,7 +21,13 @@ const Flex = ({ justifyHandler, justify }) => {
           align-items
         </a>
       </div>
-      <div className='flex-container'>{justify ? <FlexJustify /> : <FlexAlign />}</div>
+      {justify && (
+        <div className='slider'>
+          <input type='range' min='45' max='100' value={value} onChange={onChange} />
+        </div>
+      )}
+
+      <div className='flex-container'>{justify ? <FlexJustify value={value} /> : <FlexAlign />}</div>
     </FlexStyle>
   );
 };
@@ -58,6 +67,43 @@ const FlexStyle = styled.div`
     }
   }
 
+  .slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    input[type='range'] {
+      outline: none;
+      border: 0;
+      border-radius: 500px;
+      width: 500px;
+      max-width: 100%;
+      margin: auto;
+      transition: box-shadow 0.2s ease-in-out;
+      @media screen and (-webkit-min-device-pixel-ratio: 0) {
+        & {
+          height: 6px;
+          -webkit-appearance: none;
+          background-color: ${(props) => props.theme.light.grey.darker};
+        }
+
+        &::-webkit-slider-thumb {
+          width: 20px;
+          -webkit-appearance: none;
+          height: 20px;
+          border-radius: 50%;
+          /* margin-left: 15px; */
+
+          box-shadow: inset 0 0 0 20px ${(props) => props.theme.light.accent.base};
+          transition: box-shadow 0.2s ease-in-out;
+          position: relative;
+        }
+        &:active::-webkit-slider-thumb {
+        }
+      }
+    }
+  }
+
   .InActiveLink {
     pointer-events: auto;
     cursor: pointer;
@@ -71,6 +117,7 @@ const FlexStyle = styled.div`
     color: ${(props) => props.theme.light.base.color} !important;
     background: ${(props) => props.theme.light.base.bg} !important;
   }
+
   @media (max-width: 320px) {
     .toggle {
       a:first-of-type {
