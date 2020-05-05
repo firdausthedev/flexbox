@@ -39,6 +39,8 @@ const Flex = ({ justifyHandler, justify }) => {
             onChange={onChange}
             onMouseDown={event}
             onMouseUp={event}
+            onTouchStart={event}
+            onTouchEnd={event}
           />
         </div>
       )}
@@ -109,7 +111,7 @@ const FlexStyle = styled.div`
           height: 20px;
           border-radius: 50%;
           /* margin-left: 15px; */
-
+          cursor: grab;
           box-shadow: inset 0 0 0 20px ${(props) => props.theme.light.accent.base};
           transition: box-shadow 0.2s ease-in-out;
           position: relative;
@@ -134,14 +136,14 @@ const FlexStyle = styled.div`
     background: ${(props) => props.theme.light.base.bg} !important;
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: 500px) {
     .toggle {
       a:first-of-type {
-        padding: 0.6rem;
+        padding: 0.7rem;
         font-size: 0.8rem;
       }
       a {
-        padding: 0.6rem;
+        padding: 0.7rem;
         font-size: 0.8rem;
       }
     }
