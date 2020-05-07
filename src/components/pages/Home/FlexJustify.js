@@ -1,15 +1,15 @@
 import React from 'react';
-import styled, { withTheme } from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const FlexJustify = (props) => {
   let border = {};
   if (props.drag) {
-    border = { width: `${props.value}%`, border: `2px solid ${props.theme.light.accent.base}` };
+    border = { width: `${props.value}%` };
   } else {
     border = { width: `${props.value}%` };
   }
   return (
-    <FlexJustifyContainer style={border}>
+    <FlexJustifyContainer style={border} drag={props.drag}>
       <div className='items-justify'>
         <div className='items-container'>
           <p>flex-start (default)</p>
@@ -70,6 +70,12 @@ const FlexJustifyContainer = styled.div`
   border-radius: 5px;
   margin: 1rem auto;
 
+  ${(props) =>
+    props.drag &&
+    css`
+      border: 2px solid ${props.theme.light.accent.base};
+    `}
+
   .items-justify {
     display: flex;
     flex: 1;
@@ -82,7 +88,7 @@ const FlexJustifyContainer = styled.div`
       align-items: center;
 
       p {
-        flex-basis: 20%;
+        flex-basis: 9rem;
         text-align: center;
         margin-right: 10px;
         font-size: 2rem;
@@ -93,12 +99,12 @@ const FlexJustifyContainer = styled.div`
         border: 2px solid ${(props) => props.theme.light.base.bg};
         border-radius: 5px;
         height: 5rem;
-        flex-basis: 80%;
+        flex: 1;
         display: flex;
         align-items: center;
         .item {
-          height: 70%;
-          width: 3.5rem;
+          height: 60%;
+          width: 3rem;
           background: ${(props) => props.theme.light.accent.base};
           border-radius: 5px;
           margin: 1rem;
@@ -115,6 +121,7 @@ const FlexJustifyContainer = styled.div`
   @media (max-width: 710px) {
     .items-justify .items-container p {
       font-size: 1.4rem;
+      flex-basis: 6rem;
     }
   }
   @media (max-width: 500px) {
@@ -137,4 +144,4 @@ const FlexJustifyContainer = styled.div`
   }
 `;
 
-export default withTheme(FlexJustify);
+export default FlexJustify;
